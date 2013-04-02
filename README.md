@@ -1,4 +1,4 @@
 ulk
 ===
 
-Food tracking web application using angular.
+Food tracking web application backend.
