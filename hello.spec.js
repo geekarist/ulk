@@ -1,4 +1,4 @@
-require('./hello');
+var hello = require('./hello');
 
 describe('hello', function () {
   it('should say hello', function () {
