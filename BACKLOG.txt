@@ -1,0 +1,7 @@
+BACKLOG
+
+Use https://github.com/flatiron/nock for mocking http module
+
+AS a http client
+I WANT TO get the number of calories by day for this week
+IN ORDER TO print it  

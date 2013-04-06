@@ -1,13 +1,10 @@
-var express = require('express');
-var hello = require('./hello');
 var http = require('http');
 
-var app = express.createServer();
-app.get('/hello', function(req, res) {
-	res.send(201, hello.sayHello());
-});
-
-var srv = http.createServer(app);
-exports.close = srv.close;
-srv.listen(3000);
-console.log('Listening on port 3000');
+exports.getCaloriesByDayForThisWeek = function(onSuccess) {
+	http.get('http://cpele.free.fr/ogan.json', function(response) {
+		response.setEncoding('utf-8');
+		response.on('data', function(chunk) {
+			onSuccess(JSON.parse(chunk));
+		})
+	}).on('error', function(e) {console.log('Error: ' + e.message)});
+};
